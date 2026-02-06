@@ -308,6 +308,18 @@ const animationTimeline = () => {
     // Fire a few more times for good measure
     setTimeout(() => confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 } }), 500);
     setTimeout(() => confetti({ particleCount: 100, spread: 100, origin: { y: 0.6 } }), 1000);
+
+    // Show the selection screen after confetti
+    setTimeout(() => {
+    // Hide the previous section
+    const nine = document.querySelector(".nine");
+    TweenMax.to(nine, 1, { opacity: 0, display: "none" });
+
+    // Show the new section
+    const ten = document.querySelector(".ten");
+    ten.style.visibility = "visible";
+    TweenMax.fromTo(ten, 1, { opacity: 0, y: 10 }, { opacity: 1, y: 0 });
+    }, 4000);
   });
 };
 

@@ -99,6 +99,71 @@ body {
   right: 0;
 }
 
+/* New styles for the selection screen */
+.ten {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+}
+
+.places-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  padding-bottom: 50px; /* space for scrolling if needed */
+}
+
+.place {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  min-height: 450px; /* Elongated */
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.place h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.map-placeholder {
+  flex-grow: 1;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .places-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .place {
+    width: 80%;
+    min-height: 300px;
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust container top for scrollable content on mobile if needed */
+  .container > div.ten {
+     top: 10vh;
+     height: 90vh; 
+     overflow-y: auto;
+  }
+}
+
 .idea-3 strong {
   padding: 3px 5px;
   border-radius: 3px;
